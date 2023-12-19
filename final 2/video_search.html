@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link href="style1.css" rel="stylesheet" />
+    <link
+      href="https://getbootstrap.com/docs/5.3/assets/js/color-modes.js"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <section class="block-main">
+      <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol id="check2" viewBox="0 0 16 16">
+          <path
+            d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"
+          ></path>
+        </symbol>
+        <symbol id="circle-half" viewBox="0 0 16 16">
+          <path
+            d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"
+          ></path>
+        </symbol>
+        <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+          <path
+            d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"
+          ></path>
+          <path
+            d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"
+          ></path>
+        </symbol>
+        <symbol id="sun-fill" viewBox="0 0 16 16">
+          <path
+            d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"
+          ></path>
+        </symbol>
+      </svg>
+
+      <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <symbol
+          id="aperture"
+          fill="none"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <path
+            d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"
+          ></path>
+        </symbol>
+        <symbol id="cart" viewBox="0 0 16 16">
+          <path
+            d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"
+          ></path>
+        </symbol>
+        <symbol id="chevron-right" viewBox="0 0 16 16">
+          <path
+            fill-rule="evenodd"
+            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+          ></path>
+        </symbol>
+      </svg>
+
+      <div class="container">
+        <header class="border-bottom lh-1 py-3">
+          <div
+            class="row flex-nowrap justify-content-between align-items-center"
+          >
+            <div class="col-4 pt-1">
+              <a class="link-secondary" href="index.html">
+                <img src="logo.png" alt="Ticketon" />
+              </a>
+            </div>
+
+            <div class="col-4 text-center">
+              <form class="line-under">
+                <div class="input-group mb-3">
+                  <input
+                    type="search"
+                    class="form-control border-no"
+                    placeholder="Найти среди 766 событий"
+                  />
+                  <div class="input-group-append">
+                    <button
+                      class="input-group-text border-no orange text-white"
+                    >
+                      Поиск
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+
+            <div class="col-4 d-flex justify-content-end align-items-center">
+              <div>
+                <a class="link-secondary" href="#">eng</a>
+                |
+                <a class="link-secondary" href="#">қаз</a>
+              </div>
+
+              <a class="btn-orange text-white" href="#">Войти</a>
+            </div>
+          </div>
+        </header>
+
+        <div class="nav-scroller py-1 mb-3 border-bottom">
+          <nav class="nav nav-underline justify-content-between">
+            <a class="nav-item nav-link link-body-emphasis" href="#">КИНО</a>
+            <a class="nav-item nav-link link-body-emphasis" href="#">ТЕАТРЫ</a>
+            <a class="nav-item nav-link link-body-emphasis" href="#"
+              >КОНЦЕРТЫ</a
+            >
+            <a class="nav-item nav-link link-body-emphasis" href="#">ДЕТЯМ</a>
+            <a class="nav-item nav-link link-body-emphasis" href="#">СПОРТ</a>
+            <a class="nav-item nav-link link-body-emphasis" href="#">ЁЛКИ</a>
+            <a class="nav-item nav-link link-body-emphasis" href="#">ТУРЫ</a>
+            <a class="nav-item nav-link link-body-emphasis" href="#"
+              >МАСТЕР-КЛАССЫ</a
+            >
+            <a class="nav-item nav-link link-body-emphasis" href="#"
+              >РАЗВЛЕЧЕНИЯ</a
+            >
+            <a class="nav-item nav-link link-body-emphasis" href="#">МУЗЕИ</a>
+          </nav>
+        </div>
+      </div>
+
+      <main class="container">
+        <div class="container my-5">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb p-3 bg-white">
+              <li class="breadcrumb-item">
+                <a href="#" class="orange-text">ГЛАВНАЯ</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="#" class="orange-text">КИНО</a>
+              </li>
+              <li class="breadcrumb-item active" aria-current="page">
+                НАПОЛЕОН (2023)
+              </li>
+            </ol>
+          </nav>
+        </div>
+
+        <div class="row g-5">
+          <div class="col-md-8 bg-white">
+            <div class="alert alert-warning border-no mt-4" role="alert">
+              <b>158 человек</b> за последний час интересовались этим событием.
+            </div>
+
+            <h3 class="display-6 my-4">Наполеон (2023)</h3>
+
+            <div class="d-flex justify-content-between align-content-center">
+              <h4 class="fw-normal">19 декабря, от 500 тг.</h4>
+              <button class="btn btn-success">КУПИТЬ БИЛЕТЫ</button>
+            </div>
+
+            <div class="container py-5">
+              <div class="row">
+                <div class="col-md-6">
+                  <img
+                    src="https://ticketon.kz/media/upload/42404u55201_napoleon33sss546456465465564.jpg"
+                    alt="Film Poster"
+                    class="img-fluid"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <p>Год выпуска: 2023</p>
+                  <p>Дистрибьютор:</p>
+                  <p>Страна производства: Великобритания, США</p>
+                  <p>Режиссер: Ридли Скотт</p>
+                  <p>
+                    В ролях: Хоакин Феникс, Ванесса Кирби, Людивин Санье, Бен
+                    Майлз
+                  </p>
+                  <p>Жанр: боевик/драма/военный</p>
+                  <p>Продолжительность: 158 минут</p>
+                  <p>Возрастное ограничение: 18+</p>
+                  <p>Дата премьеры: 20 ноября 2023</p>
+                </div>
+              </div>
+            </div>
+
+            <p>
+              «Наполеон» (2023) - захватывающий исторический фильм,
+              рассказывающий о жизни и правлении знаменитого французского
+              императора Наполеона Бонапарта. Фильм охватывает ключевые эпизоды
+              его жизни от нищего юноши, военного гения, до коронования
+              императором Франции.
+              <br /><br />
+              Основное внимание уделяется его военным подвигам, таким как
+              итальянская кампания и наполеоновские войны, а также его сложным
+              личным отношениям и политическим противоречиям.
+              <br /><br />
+              Фильм погружает зрителя в эпоху Наполеона с помощью великолепных
+              костюмов, декораций и впечатляющих сцен битвы. «Наполеон» - это
+              историческая эпопея, которая привлечет внимание исторических
+              энтузиастов и любителей качественного кинематографа.
+            </p>
+
+            <div class="my-4">
+              <iframe
+                id="iframe"
+                width="100%"
+                height="315"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+
+            <p class="fw-bold">Рассказать друзьям</p>
+            <p class="">Не хватает информации? Напишите нам, мы добавим!</p>
+
+            <p class="pb-4 mt-5 mb-1 fw-bold">Рекомендуем также:</p>
+
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="images/45186u54364_img_20231109_103455_765.png"
+                      class="card-img-top"
+                      style="border-radius: 0"
+                    />
+                    <div class="card-body">
+                      <p class="c-text">
+                        23 декабря, 17:00 Ледовое шоу Татьяны Навки ...
+                      </p>
+                      <a class="c-text orange-text">Almaty Arena</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card border-no">
+                    <img
+                      src="images/45257u55201_24-01-6--ledovoe-shou--afisha645645465564564564vy.jpg"
+                      class="card-img-top"
+                      style="border-radius: 0"
+                    />
+                    <div class="card-body">
+                      <p class="c-text">
+                        6 января Ледовое шоу «Аладдин» в Алматы
+                      </p>
+                      <a class="c-text orange-text">Almaty Arena</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="card">
+                    <img
+                      src="images/naiza-56-v-almaty236.jpg"
+                      class="card-img-top"
+                      style="border-radius: 0"
+                    />
+                    <div class="card-body">
+                      <p class="c-text">21 декабря, 16:00 NAIZA 56 в Алматы</p>
+                      <a class="c-text orange-text">Almaty Arena</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="row px-2 py-3 bg-body-tertiary rounded-5 my-5 shadow-sm"
+            >
+              <div class="col-md-8">
+                <h6>Правила Комментирования Ticketon.kz</h6>
+                <p>
+                  Пожалуйста, прочитайте наши Правила публикации комментариев,
+                  прежде чем комментировать.
+                </p>
+              </div>
+              <div class="col-md-4">
+                <p></p>
+                <button
+                  class="btn btn-primary rounded-5 p-3 px-5 fw-bolder text-x"
+                >
+                  Понятно
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right side -->
+          <div class="col-md-4">
+            <div class="position" style="top: 2rem">
+              <div class="p-4 mb-3 rounded" style="width: 100%">
+                <select class="form-select select-city" id="exampleSelect">
+                  <option selected="">Выберите город</option>
+                  <option value="1">Аксу</option>
+                  <option value="2">Актау</option>
+                  <option value="3">Актобе</option>
+                  <option value="4">Алматы</option>
+                  <option value="5">Астана</option>
+                  <option value="6">Атырау</option>
+                </select>
+              </div>
+
+              <div class="container bg-white p-0">
+                <div style="width: 100%" class="orange text-white px-3 py-2">
+                  Выбрать даты событий
+                </div>
+                <div class="row text-center p-2">
+                  <div class="col"><strong>П</strong></div>
+                  <div class="col"><strong>В</strong></div>
+                  <div class="col"><strong>С</strong></div>
+                  <div class="col"><strong>Ч</strong></div>
+                  <div class="col"><strong>П</strong></div>
+                  <div class="col"><strong>С</strong></div>
+                  <div class="col"><strong>В</strong></div>
+                </div>
+                <!-- Week 1 -->
+                <div class="row text-center p-2">
+                  <div class="col">-</div>
+                  <div class="col">-</div>
+                  <div class="col">-</div>
+                  <div class="col">-</div>
+                  <div class="col">1</div>
+                  <div class="col">2</div>
+                  <div class="col">3</div>
+                </div>
+                <!-- Week 2 -->
+                <div class="row text-center p-2">
+                  <div class="col">4</div>
+                  <div class="col">5</div>
+                  <div class="col">6</div>
+                  <div class="col">7</div>
+                  <div class="col">8</div>
+                  <div class="col">9</div>
+                  <div class="col">10</div>
+                </div>
+                <!-- Week 3 -->
+                <div class="row text-center p-2">
+                  <div class="col">11</div>
+                  <div class="col">12</div>
+                  <div class="col">13</div>
+                  <div class="col">14</div>
+                  <div class="col">15</div>
+                  <div class="col">16</div>
+                  <div class="col">17</div>
+                </div>
+                <!-- Week 4 -->
+                <div class="row text-center p-2">
+                  <div class="col">18</div>
+                  <div class="col">19</div>
+                  <div class="col">20</div>
+                  <div class="col">21</div>
+                  <div class="col">22</div>
+                  <div class="col">23</div>
+                  <div class="col">24</div>
+                </div>
+
+                <div class="p-3">
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="timeOptions"
+                      id="thisWeek"
+                      value="thisWeek"
+                    />
+                    <label class="form-check-label" for="thisWeek">
+                      На этой неделе
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="timeOptions"
+                      id="thisWeekend"
+                      value="thisWeekend"
+                    />
+                    <label class="form-check-label" for="thisWeekend">
+                      В эти выходные
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="radio"
+                      name="timeOptions"
+                      id="nextWeek"
+                      value="nextWeek"
+                    />
+                    <label class="form-check-label" for="nextWeek">
+                      На следующей неделе
+                    </label>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-center align-items-center">
+                  <button
+                    class="btn-or border-no orange text-white p-2 px-3 mb-3"
+                  >
+                    Найти билеты
+                  </button>
+                </div>
+              </div>
+
+              <div class="p-4">
+                <button class="btn-right">Акции: 21</button>
+                <button class="btn-right">Сертификаты</button>
+                <button class="btn-right">Кассовые сборы кино</button>
+                <button class="btn-right">Топ событий недели</button>
+                <button class="btn-right">Видео-афиша недели</button>
+                <button class="btn-right">Международные события</button>
+              </div>
+
+              <div class="p-4">
+                <h4 class="fst-italic">Не пропустите лучшие события</h4>
+                <ol class="list-unstyled">
+                  <li><a href="#">Instagram</a></li>
+                  <li><a href="#">Twitter</a></li>
+                  <li><a href="#">Facebook</a></li>
+                </ol>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      <script
+        src="/docs/5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"
+      ></script>
+    </section>
+
+    <footer class="bg-dark text-white p-5 mt-0">
+      <div class="row">
+        <div class="col-6 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">Публичная оферта</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">Помощь</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >Правила и способы возврата</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">Правила конкурсов</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >Форма обратной связи</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">Карта сайта</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">О системе</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">Вакансии</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >Организаторам и кинотеатрам</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >Условия реферальной программы</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >Правила бонусной программы</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">Правообладателям</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-2 mb-3">
+          <ul class="nav flex-column">
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >Помощь без выходных:</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >+7 (727)225-10-50 (Алматы)</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >+7 (717)247-63-50 (Астана)</a
+              >
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white">+7 771936-53-53</a>
+            </li>
+            <li class="nav-item mb-2">
+              <a href="#" class="nav-link p-0 text-white"
+                >Почта:help@ticketon.kz</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-md-5 offset-md-1 mb-3">
+          <form>
+            <h5>Подпишитесь на анонсы</h5>
+
+            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
+              <label for="newsletter1" class="visually-hidden">Email</label>
+              <input
+                id="newsletter1"
+                type="text"
+                class="form-control border-no"
+                placeholder="Email"
+              />
+              <button class="btn btn-secondary border-no" type="button">
+                OK
+              </button>
+            </div>
+
+            <p style="font-size: 0.75rem">Еженедельные подборки событий</p>
+          </form>
+        </div>
+      </div>
+
+      <p>© 2012 - 2023 ТОО «Ticketon Events». Все права защищены.</p>
+    </footer>
+    <script>
+      window.onload = () => {
+        // fetch data from LS
+        let video = JSON.parse(localStorage.getItem("video_search")) || [];
+        displayVideos(video);
+      };
+      let displayVideos = (data) => {
+        console.log(data);
+        let iframe = document.querySelector("iframe");
+        var videoCode = data.trailer_url.match(/youtu\.be\/([^\/?]+)/i)[1];
+        iframe.src = `https://www.youtube.com/embed/${videoCode}`;
+        let title = document.querySelector("h3");
+        title.innerText = data.name;
+      };
+    </script>
+  </body>
+</html>
