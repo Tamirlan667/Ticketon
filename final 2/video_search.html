@@ -172,47 +172,10 @@
             </div>
 
             <div class="container py-5">
-              <div class="row">
-                <div class="col-md-6">
-                  <img
-                    src="https://ticketon.kz/media/upload/42404u55201_napoleon33sss546456465465564.jpg"
-                    alt="Film Poster"
-                    class="img-fluid"
-                  />
-                </div>
-                <div class="col-md-6">
-                  <p>Год выпуска: 2023</p>
-                  <p>Дистрибьютор:</p>
-                  <p>Страна производства: Великобритания, США</p>
-                  <p>Режиссер: Ридли Скотт</p>
-                  <p>
-                    В ролях: Хоакин Феникс, Ванесса Кирби, Людивин Санье, Бен
-                    Майлз
-                  </p>
-                  <p>Жанр: боевик/драма/военный</p>
-                  <p>Продолжительность: 158 минут</p>
-                  <p>Возрастное ограничение: 18+</p>
-                  <p>Дата премьеры: 20 ноября 2023</p>
-                </div>
-              </div>
+              <div class="row" id="row"></div>
             </div>
 
-            <p>
-              «Наполеон» (2023) - захватывающий исторический фильм,
-              рассказывающий о жизни и правлении знаменитого французского
-              императора Наполеона Бонапарта. Фильм охватывает ключевые эпизоды
-              его жизни от нищего юноши, военного гения, до коронования
-              императором Франции.
-              <br /><br />
-              Основное внимание уделяется его военным подвигам, таким как
-              итальянская кампания и наполеоновские войны, а также его сложным
-              личным отношениям и политическим противоречиям.
-              <br /><br />
-              Фильм погружает зрителя в эпоху Наполеона с помощью великолепных
-              костюмов, декораций и впечатляющих сцен битвы. «Наполеон» - это
-              историческая эпопея, которая привлечет внимание исторических
-              энтузиастов и любителей качественного кинематографа.
-            </p>
+            <p id="p"></p>
 
             <div class="my-4">
               <iframe
@@ -565,10 +528,37 @@
       let displayVideos = (data) => {
         console.log(data);
         let iframe = document.querySelector("iframe");
-        var videoCode = data.trailer_url.match(/youtu\.be\/([^\/?]+)/i)[1];
-        iframe.src = `https://www.youtube.com/embed/${videoCode}`;
+        var videoCode = data.trailer_url.split("/").pop();
         let title = document.querySelector("h3");
         title.innerText = data.name;
+        iframe.src = `https://www.youtube.com/embed/${videoCode}`;
+
+        const video = `<div class="col-md-6">
+  <img
+    src="${data.image_url}"
+    alt="Film Poster"
+    class="img-fluid"
+  />
+</div>
+<div class="col-md-6">
+  <p>Год выпуска: ${data.year_of_issue}</p>
+  <p>Дистрибьютор: ${data.distributor}</p>
+  <p>Страна производства: ${data.country_of_manufacture}</p>
+  <p>Режиссер: ${data.directed_by}</p>
+  <p>
+    В ролях: ${data.main_actors}
+  </p>
+  <p>Жанр: ${data.genre}</p>
+  <p>Продолжительность: ${data.duration} мин</p>
+  <p>Возрастное ограничение: 18+</p>
+  <p>Дата премьеры: ${data.premiere_date}</p>
+</div>
+</div>`;
+        let channel = document.getElementById("row");
+        channel.innerHTML += video;
+        // if (!data) return;
+        let p = document.getElementById("p");
+        p.innerText = data.overview;
       };
     </script>
   </body>
