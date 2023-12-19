@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Login</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      body {
+        background-image: url("eee.png");
+        background-size: cover;
+        background-attachment: fixed;
+      }
+      .wrapper {
+        width: 330px;
+        padding: 6rem 1rem;
+        margin: 50px auto;
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 20px 35px rgba(0, 0, 0, 0);
+      }
+      h1 {
+        font-size: 1.5rem;
+        color: black;
+        margin-bottom: 1.2rem;
+      }
+      form input {
+        width: 92%;
+        outline: none;
+        border: 1px solid #fff;
+        padding: 12px 20px;
+        margin-bottom: 10px;
+        border-radius: 20px;
+        background-color: #fff;
+      }
+      button {
+        font-size: 1rem;
+        margin-top: 1.8rem;
+        padding: 10px 0;
+        border-radius: 20px;
+        outline: none;
+        border: none;
+        width: 90%;
+        color: #fff;
+        cursor: pointer;
+        background-color: #fd7400;
+      }
+      a {
+        text-decoration: none;
+        color: #fd7400;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <h1>Регистрация</h1>
+      <form id="registerForm">
+        <input
+          type="text"
+          id="usernameRegister"
+          name="username"
+          placeholder="username"
+        />
+        <input type="email" id="mailRegister" name="mail" placeholder="mail" />
+        <input
+          type="password"
+          id="passwordRegister"
+          name="password"
+          placeholder="password"
+        />
+        <a href="login.html">Уже зарегистрированы?</a>
+        <button type="button" onclick="registerUser()">Register</button>
+      </form>
+    </div>
+    <script>
+      function registerUser() {
+        var username = document.getElementById("usernameRegister").value;
+        var email = document.getElementById("mailRegister").value;
+        var password = document.getElementById("passwordRegister").value;
+
+        var ajax = new XMLHttpRequest();
+        var method = "POST";
+        var url = "register.php";
+        var async = true;
+
+        ajax.open(method, url, async);
+
+        ajax.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded"
+        );
+
+        var data =
+          "username=" +
+          encodeURIComponent(username) +
+          "&email=" +
+          encodeURIComponent(email) +
+          "&password=" +
+          encodeURIComponent(password);
+
+        ajax.send(data);
+
+        ajax.onreadystatechange = function () {
+          if (this.readyState == 4 && this.status == 200) {
+            var data = JSON.parse(this.responseText);
+            console.log(data);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>

@@ -136,6 +136,7 @@ function searchByDate(clickedElement) {
 
       if (data.hasOwnProperty("error")) {
         console.error(data.error);
+        disEr();
       } else {
         for (var i = 0; i < data.length; i++) {
           displayVideos(data);
@@ -144,3 +145,30 @@ function searchByDate(clickedElement) {
     }
   };
 }
+let disEr = () => {
+  let row = document.getElementById("nope");
+  row.innerHTML = "";
+  // let card = document.createElement("div");
+  // card.setAttribute("class", "video__group");
+  // card.addEventListener("click", (event) => {
+  //   saveVideo(element);
+  // });
+  // let thumbnail = document.createElement("img");
+  // thumbnail.src = element.snippet.thumbnails.medium.url;
+  // thumbnail.setAttribute("class", "video__thumbnail");
+  // let title = document.createElement("h3");
+  // title.innerText = element.snippet.title;
+  // title.setAttribute("class", "video__name");
+  // card.append(thumbnail, title);
+  // row.append(card);
+
+  const video = `
+      <div class="card border-no">
+      NO MOVIE
+      </div>
+        `;
+  const videoGroup = document.createElement("div");
+  videoGroup.classList.add("col-md-4");
+  videoGroup.innerHTML += video;
+  row.appendChild(videoGroup);
+};

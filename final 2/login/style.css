@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+body{
+    background-image: url('eee.png');
+    background-size: cover; 
+    background-attachment: fixed; 
+}
+.wrapper{
+    width: 330px;
+    padding: 6rem 1rem;
+    margin: 50px auto;
+    background-color: rgba(0,0,0,0);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 20px 35px rgba(0,0,0,0);
+}
+h1{
+    font-size: 1.5rem;
+    color: black;
+    margin-bottom: 1.2rem;
+}
+form input{
+    width: 92%;
+    outline: none;
+    border: 1px solid #fff;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+button{
+    font-size: 1rem;
+    margin-top: 1.8rem;
+    padding: 10px 0;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    width: 90%;
+    color: #fff;
+    cursor: pointer;
+    background-color: #fd7400;
+}
+a{
+    text-decoration: none;
+    color: #fd7400;
+}
